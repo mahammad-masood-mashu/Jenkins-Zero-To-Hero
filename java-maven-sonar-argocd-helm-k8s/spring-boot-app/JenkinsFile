@@ -60,8 +60,9 @@ find . -name .git
 '''
                 sh '''
                   
-                    git config user.email "masood.xyz@gmail.com"
-                    git config user.name "Mahammad Masood"
+                   git config --global --add safe.directory /var/lib/jenkins/workspace/CICDproject
+                    git config --global user.email "masood.xyz@gmail.com"
+                    git config --global user.name "Mahammad Masood"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
