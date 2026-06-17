@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
+        git branch: 'main', url: 'https://github.com/mahammad-masood-mashu/Jenkins-Zero-To-Hero.git'
       }
     }
     stage('Build and Test') {
@@ -53,6 +53,7 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
+                  
                     git config user.email "masood.xyz@gmail.com"
                     git config user.name "Mahammad Masood"
                     BUILD_NUMBER=${BUILD_NUMBER}
