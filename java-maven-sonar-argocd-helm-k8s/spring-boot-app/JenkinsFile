@@ -46,17 +46,18 @@ pipeline {
       }
     }
     stage('Update Deployment File') {
-sh '''
-pwd
-ls -la
-find . -name .git
-'''
+
         environment {
             GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
             GIT_USER_NAME = "mahammad-masood-mashu"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+          sh '''
+pwd
+ls -la
+find . -name .git
+'''
                 sh '''
                   
                     git config user.email "masood.xyz@gmail.com"
