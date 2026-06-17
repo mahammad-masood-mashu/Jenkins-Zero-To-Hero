@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: macchuu1/springboot-app:replaceImageTag
+        image: macchuu1/springboot-app:12
         ports:
         - containerPort: 8080
